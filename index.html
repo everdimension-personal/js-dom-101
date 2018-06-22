@@ -51,6 +51,34 @@
     .section > div + div {
       margin-left: 10px;
     }
+
+    .select > select {
+      -webkit-appearance: none;
+      appearance: none;
+      border: none;
+      background: transparent;
+      outline: none;
+      width: 100%;
+    }
+
+    .select {
+      position: relative;
+      border: 2px solid #ccc;
+      border-radius: 100px;
+    }
+
+    .select--focused {
+      border-color: magenta;
+    }
+    /* select:focus ~ span {
+      position: absolute;
+      left: -2px;
+      top: -2px;
+      right: -2px;
+      bottom: -2px;
+      border: 2px solid magenta;
+      border-radius: 100px;
+    } */
   </style>
 </head>
 <body>
@@ -58,9 +86,20 @@
   <p>Hello</p>
   <p>World</p>
 
+  <button class="select-toggler">toggle select</button>
   <form>
     <input type="text" name="info" />
     <button>save</button>
+    <div class="select-area">
+      <div class="select">
+        <select name="selector" id="">
+          <option value="1">none</option>
+          <option value="2">two</option>
+          <option value="3">three</option>
+        </select>
+        <span></span>
+      </div>
+    </div>
   </form>
 
 
@@ -81,5 +120,6 @@
     };
   </script>
   <script src="add-tag.js"></script>
+  <script src="select-styling.js"></script>
 </body>
 </html>
